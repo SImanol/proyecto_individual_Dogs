@@ -1,3 +1,4 @@
+import './pagintion.css'
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nextPage, prevPage } from "../../redux/actions";
@@ -14,26 +15,26 @@ const Pagination = ({cantPage}) => {
     }
 
     return (
-        <>
+        <div className='paginate'>
             {
                 currentPage > 1 ?
                 <>
                     <button onClick={prev}> PREV </button>
-                    <p>{currentPage - 1}</p>
+                    <label>{currentPage - 1}</label>
                 </> : null
             }
+           
+            <span>{currentPage}</span>
             
-            <h3>{currentPage}</h3>
-
             {
                 currentPage < cantPage ? 
                 <>
-                <p>{currentPage  + 1}</p>
+                <label>{currentPage  + 1}</label>
                 <button onClick={next}> NEXT </button>
                 </> : null
             }
             
-        </>
+        </div>
     )
 };
 

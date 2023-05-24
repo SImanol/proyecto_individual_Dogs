@@ -4,7 +4,7 @@ import {validate} from "../validation";
 import {createNewDog} from "../../redux/actions";
 import Card from "../Card/Card";
 import Multilist from '../Multilist/multilist.jsx'
-
+import './Form.css'
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -57,6 +57,8 @@ const Form = () => {
         life_span:0,
         temperament:[],
       })
+
+      window.location.reload();
     };}
 
   const setInFormTemperaments = (temp) => {
@@ -69,53 +71,46 @@ console.log(formData)
     <div className="form">
       <form className="create" onSubmit={handleSubmit}>
         <h3>ADD NEW DOG:</h3>
-        <label>Name of Breeds: </label>
+        <label  className="title3">Name of Breeds: </label>
+        <br />
         <input name="name" type="text" value={formData.name} onChange={handleInputChange}></input>
         {errors.name? <p>{errors.name}</p> : <p> </p>}
       
-        <label>Image: </label>
+        <label >Image: </label>
+        <br />
         <input name="image" type="text" value={formData.image} onChange={handleInputChange}></input>
         {errors.image? <p>{errors.image}</p> : <p> </p>}
       
-        <label>Height: </label>
+        <label className="title3">Height: </label>
         <br/>
-        <label>min: </label>
+        <label className="label">min: </label>
         <input className = "number" name="heightMin" type="number" value={formData.heightMin} onChange={handleInputChange}></input>
-        <span> cm</span>
-        <label>  -  max: </label>
+        <span className="label"> cm</span>
+        <label className="label">  -  max: </label>
         <input className = "number" name="heightMax" type="number" value={formData.heightMax} onChange={handleInputChange}></input>
-        <span> cm</span>
+        <span className="label"> cm</span>
         {errors.heightMin? <p>{errors.heightMin}</p> : errors.heightMax? <p>{errors.heightMax}</p> : <p> </p>}
 
-        <label>Weight:</label>
+        <label >Weight:</label>
         <br/>
         <label>min: </label>
         <input className = "number" name="weightMin" type="number" value={formData.weightMin} onChange={handleInputChange}></input>
         <span> kg</span>
-        <label>  -  max: </label>
+        <label >  -  max: </label>
         <input className = "number" name="weightMax" type="number" value={formData.weightMax} onChange={handleInputChange}></input>
         <span> kg</span>
         {errors.weightMin? <p>{errors.weightMin}</p>: errors.weightMax? <p>{errors.weightMax}</p>: <p> </p>}
 
-        <label>Life span: </label>
-        <input className = "number" name="life_span" type="number" value={formData.life_span} onChange={handleInputChange} ></input>
+        <label >Life span: </label>
+        <br />
+        <input  name="life_span" type="number" value={formData.life_span} onChange={handleInputChange} ></input>
         {errors.life_span? <p>{errors.life_span}</p>  : <p> </p>}
 
-        <label>Temperaments: </label>
+        <label >Temperaments: </label>
          <Multilist setInFormTemperaments={setInFormTemperaments} /> 
         <br/>
         <button type="submit">SUBMIT</button>
       </form>
-      <div>
-        <Card
-        key = 'prev'
-        id = {undefined}
-        name = {formData.name}
-        temperament = {formData.temperament}
-        weight = {`${formData.weightMin} - ${formData.weightMax}`}
-        image = {formData.image? formData.image: imageDefault }
-        />
-        </div>
     </div>
   )
 };

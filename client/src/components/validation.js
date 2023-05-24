@@ -3,16 +3,16 @@ export const validate = (userData) => {
     let errors = {};
     const formatoImagenRegex = /\.(jpg|jpeg|png)$/;
 
-    if(!userData.name) errors.name = 'Este campo no puede estar vacio';
-    if( userData.name?.length > 35) errors.name = 'El nombre no puede superar los 35 caracteres';
-    if(!formatoImagenRegex.test(userData.image)) errors.image = 'La imagen debe ser en formato "jpg", "jpeg" o "png" ';
-    if( isNaN(userData.heightMin) || userData.heightMin <= 0) errors.heightMin = 'El min debe ser un numero mayor a 0';
-    if( isNaN(userData.heightMax) || userData.heightMax <= 0) errors.heightMax = 'El max debe ser un numero mayor a 0';
-    if(userData.heightMax < userData.heightMin) errors.heightMax = 'El max no puede ser un numero menor al min'
-    if( isNaN(userData.weightMin) || userData.weightMin <= 0) errors.weightMin = 'El min debe ser un numero mayor a 0';
-    if( isNaN(userData.weightMax) || userData.weightMax <= 0) errors.weightMax = 'El max debe ser un numero mayor a 0';
-    if(userData.weightMax < userData.weightMin) errors.weightMin = 'El max no puede ser un numero menor al min'
-    if( isNaN(userData.life_span) || userData.life_span <= 0) errors.life_span = 'Debe ser un numero mayor a 0';
+    if(!userData.name) errors.name = 'This field can not be blank';
+    if( userData.name?.length > 35) errors.name = 'The name cannot exceed 35 characters';
+    if(!formatoImagenRegex.test(userData.image)) errors.image = 'The image must be in "jpg", "jpeg" or "png" format';
+    if( isNaN(userData.heightMin) || userData.heightMin <= 0) errors.heightMin = 'The min must be a number greater than 0';
+    if( isNaN(userData.heightMax) || userData.heightMax <= 0) errors.heightMax = 'The max must be a number greater than 0';
+    if(userData.heightMax < userData.heightMin) errors.heightMax = 'The max cannot be a number less than the min.'
+    if( isNaN(userData.weightMin) || userData.weightMin <= 0) errors.weightMin = 'The min must be a number greater than 0';
+    if( isNaN(userData.weightMax) || userData.weightMax <= 0) errors.weightMax = 'The max must be a number greater than 0';
+    if(userData.weightMax < userData.weightMin) errors.weightMin = 'The max cannot be a number less than the min.'
+    if( isNaN(userData.life_span) || userData.life_span <= 0) errors.life_span = 'Must be a number greater than 0';
 
     return errors
 };

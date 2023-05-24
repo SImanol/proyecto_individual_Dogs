@@ -1,0 +1,49 @@
+
+.multiselect {
+    width: 290px;
+    height: auto;
+    font-family: 'Abel';
+  }
+  
+  .selectBox {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .selectBox input {
+    border: 1px solid;
+    width: 200px;
+    height: 26px;
+    font-weight: bold;
+    align-content: center;
+  }
+  .selected{
+    border: 1px solid;
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+  }
+  
+  #checkboxes {
+    width: 200px;
+    height: 80px;
+    display: block;
+    border: 1px #dadada solid;
+    text-align: left;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+  }
+  
+  #checkboxes label {
+    display: block;
+  }
+  
+  #checkboxes label:hover {
+    background-color: #cd8c3d;
+  }
+  

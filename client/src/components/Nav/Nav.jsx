@@ -1,3 +1,5 @@
+import SearchBar from '../SearchBar/SearchBar';
+import './Nav.css'
 import { Link, useLocation } from "react-router-dom";
 
 const Nav = (props) => {
@@ -12,16 +14,14 @@ const Nav = (props) => {
   };
 
   return (
-    <div>
+    <div className='search'>
       <Link to="/home" onClick={handleHomeClick}>
-        <p>HOME</p>
-      </Link>
-      <Link to="/about">
-        <p>ABOUT</p>
+        <button className='buttonHome'>🏠</button>
       </Link>
       <Link to="/form">
-        <p>NEW DOG</p>
+        <button className='buttonNew'>New 🐶</button>
       </Link>
+      {location.pathname ==='/home' && <SearchBar/> }
     </div>
   );
 };

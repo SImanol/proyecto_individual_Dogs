@@ -1,0 +1,55 @@
+.create {
+    width: 350px;
+    background-color: #ffb24e;
+    margin: 20px;
+    padding: 10px 20px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    text-align: left;
+  }
+  
+  .form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+  
+  .form label{
+    font-weight:bolder;  
+  }
+  
+  .form h3{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(165, 97, 42);
+    margin: 10px;
+    text-align: center;
+
+  }
+  
+  .form button{
+    float: right;
+    background-color: rgb(165, 97, 42);
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .form button:hover{
+    color: #ffffff;
+    box-shadow: 0 0.1rem 0.3rem rgb(255, 255, 255);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+  
+  .number{
+    width: 40px;
+  }
+  
+  .form p{
+    color: #ff0000;
+    height: 1.5em;
+    padding-bottom: 4px;
+  }

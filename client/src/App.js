@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route, useLocation} from 'react-router-dom'
 import Landing from './components/Landing/Landing';
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
@@ -12,6 +12,7 @@ import { getAllDogs } from './redux/actions';
 
 function App() {
   const dispatch = useDispatch()
+  const location = useLocation()
   
   useEffect(() => {
     dispatch(getAllDogs());
@@ -19,9 +20,8 @@ function App() {
   
   return (
     <div className="App">
-      {/* {location.pathname !== '/'? <Nav/> : <></>} */}
+      {location.pathname !== '/' && <Nav/>}
 
-      <Nav />
       <Routes>
         <Route path= '/' element={<Landing/>}/>
         <Route path= '/home' element={<Home />} />

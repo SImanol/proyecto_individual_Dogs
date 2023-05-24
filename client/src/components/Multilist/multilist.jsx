@@ -1,3 +1,4 @@
+import './multilist.css'
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {getTemperament} from "../../redux/actions";
@@ -59,7 +60,7 @@ const Multilist = (props) =>{
     <div className="multiselect">
     <div className="selectBox">
       <input className="inputselect" type="search" placeholder="Search temperaments" onChange={changeSearchValue}  value={searchValue}/>
-      <label className="select" onClick={changeExpanded}>▼</label>
+      <label className="selected" onClick={changeExpanded}>▼</label>
     </div>
     {
     expanded && (
@@ -68,12 +69,10 @@ const Multilist = (props) =>{
       <input type="checkbox" name='All' checked={allChecked} onChange={changeCheckedAll}/>All Temperaments
       </label>
     {filterName.map(temp =>
-    <ul>
     <label key={temp.id} >
     <input type="checkbox" name={temp.name} checked={temp.isChecked} onChange={changeIsChecked}/>
     {temp.name.split(', ' )}
     </label>
-    </ul>
   )}
     </div>
     )

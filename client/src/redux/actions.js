@@ -8,7 +8,8 @@ import {
  PREV_PAGE,
  ORDER_DOGS,
  FILTER_DOGS_TEMPERAMENTS,
- FILTER_BY_ORIGIN} from './actions-types'
+ FILTER_BY_ORIGIN,
+ CLEAN_DETAIL} from './actions-types'
 
  import axios from "axios";
 
@@ -83,3 +84,8 @@ export const filterByTemperaments = (payload) => {
 export const filterByData = (payload) => {
     return {type: FILTER_BY_ORIGIN, payload}
 }
+export const clearDetailDog = () => {
+    return {
+      type: CLEAN_DETAIL,
+    };
+  };

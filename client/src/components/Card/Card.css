@@ -1,0 +1,56 @@
+.card {
+    width: 300px;
+    height: 430px;
+    margin: 50px 20px 20px 50px;
+    background-color: rgb(180, 180, 180);;
+    border: 0.1mm solid rgb(0, 0, 0);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    text-size-adjust: auto;
+    flood-opacity: initial;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .card:hover{
+    box-shadow: 6px 7px 0px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
+  .card img {
+    width: 95%;
+    height: 250px;
+    border-radius: 10px ; 
+  }
+  .card .cardName{
+    font-size: large;
+    font-style: oblique;
+    padding-left: 10px;
+    float: left;
+    text-decoration: none;
+    margin: 5px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
+  }
+  
+  .card .weight {
+    float: left;
+    font-size: medium;
+    margin: 2px 5px;
+    color: rgb(0, 0, 0);
+  }
+  .card .temp {
+    float: left;
+    font-size: medium;
+    margin: 1px 5px 9px 5px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .card b{
+    padding-right: 10px;
+    padding-left: 9px;
+    float: left;
+    padding: auto;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
+  }  
+    

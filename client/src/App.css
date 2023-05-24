@@ -1,6 +1,10 @@
 .App {
   text-align: center;
+  background: radial-gradient(rgb(240, 215, 175), rgb(251, 189, 114));
+  font-family: 'Dangrek', cursive;
+  min-height: 713px;
 }
+
 
 .App-logo {
   height: 40vmin;

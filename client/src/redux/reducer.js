@@ -1,4 +1,4 @@
-import { GET_DOGS, SEARCH_BY_NAME, DOGS_DETAIL, NEW_DOG, GET_TEMPERAMENTS, NEXT_PAGE, PREV_PAGE, ORDER_DOGS, FILTER_DOGS_TEMPERAMENTS, FILTER_BY_ORIGIN } from './actions-types'
+import { GET_DOGS, SEARCH_BY_NAME, DOGS_DETAIL, NEW_DOG, GET_TEMPERAMENTS, NEXT_PAGE, PREV_PAGE, ORDER_DOGS, FILTER_DOGS_TEMPERAMENTS, FILTER_BY_ORIGIN, CLEAN_DETAIL } from './actions-types'
 
 const initialState = {
   dogs: [],
@@ -35,6 +35,11 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         detailDogs: payload,
+      }
+    case CLEAN_DETAIL:
+      return{
+        ...state,
+        detailDogs: {},
       }
     case GET_TEMPERAMENTS:
       return {

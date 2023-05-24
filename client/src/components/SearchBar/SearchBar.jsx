@@ -1,3 +1,4 @@
+import './SearchBar.css'
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchDogsByName } from "../../redux/actions";
@@ -16,16 +17,16 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+    <div className="searchBar">
       <input
-        className="searchbarInput"
+        class="searchbarInput"
         type="search"
-        placeholder="Search by Breed"
+        placeholder="Search by Breed" 
         value={dogName}
         onChange={handleSearch}
       />
-      <button className="searchbarButton" onClick={() => onSearch()}>
-        SEARCH
+      <button class="searchbarButton" onClick={() => onSearch()}>
+         🔎
       </button>
     </div>
   );

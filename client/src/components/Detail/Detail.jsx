@@ -1,9 +1,9 @@
+import './detail.css'
 import { useParams } from "react-router-dom"
 import {useDispatch, useSelector} from 'react-redux'
-import { detailOfDog } from '../../redux/actions'
+import { detailOfDog, clearDetailDog } from '../../redux/actions'
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
-
 
 const DogsDetails = () => {
     const dispatch = useDispatch();
@@ -13,22 +13,26 @@ const DogsDetails = () => {
 
     useEffect(()=>{
         dispatch(detailOfDog(id));
-       }, [dispatch, id])
+    return () => {
+      dispatch(clearDetailDog());
+    };
+  }, [dispatch, id]);
        
     return(
-            <div>
-            <img src={detail.dog?.image || detail.dog?.image.url} alt="" />
-            <div>
-                <h1><b>ID: </b>{detail.dog?.id || detail.dog?.id}</h1>
-                <h1><b>Name: </b>{detail.dog?.name}</h1>
-                <h1><b>Height: </b>{detail.dog?.height}</h1>
-                <h1><b>Weight: </b>{detail.dog?.weight}</h1>
-                <h1><b>Temperaments: </b>{detail.dog?.temperament || detail.dog?.Temperaments.name}</h1>
-                <h1><b>Life_Span: </b>{detail.dog?.life_span}</h1>
+            <div className="detail">
+                <h1 className='title'>{detail.dog?.name}</h1>
+            <img src={detail.dog?.image || detail.dog?.image.url} alt="" className='img'/>
+            
+                <h1 className='info'><b className='subtitle'>ID: </b>{detail.dog?.id || detail.dog?.id}</h1>
+                
+                <h1 className='info'><b className='subtitle'>Height: </b>{detail.dog?.height} cm</h1>
+                <h1 className='info'><b className='subtitle'>Weight: </b>{detail.dog?.weight} kg</h1>
+                <h1 className='info'><b className='subtitle'>Temperaments: </b>{detail.dog?.temperament || detail.dog?.Temperaments.name}</h1>
+                <h1 className='info'><b className='subtitle'>Life_Span: </b>{detail.dog?.life_span}</h1>
                 <Link to= '/home'>
-                <button>◄◄</button>
+                <button className='buttondetail'>◄◄</button>
                 </Link>
-            </div>
+           
             </div> 
     )
 }

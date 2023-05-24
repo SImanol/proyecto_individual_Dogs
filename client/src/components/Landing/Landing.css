@@ -1,0 +1,55 @@
+.landing{
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding-top: 30px;
+    background: linear-gradient( rgb(255, 255, 255),10%, rgb(251, 189, 114), 80%, rgb(255, 255, 255), 10%);
+    height: auto;
+    padding-bottom: 0px;
+}
+@keyframes spin-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+.landing img{
+    height: 400px;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 200px;
+    /* margin-left: 100px; */
+    box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+}
+.landing img:hover{
+    transform: rotate(720deg);
+}
+.landing h1{
+    justify-content: center;
+    text-align: center;
+    color: rgb(253, 122, 0);
+    text-shadow: 0px 10px 7px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 1px black;
+}
+.landing button{
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 10px ;
+    padding: 10px;
+    height: 35px;
+    width: 90px;
+    background-color:  rgb(253, 122, 0);
+    justify-content: center;
+    cursor:pointer;
+    transition: transform 0.3s ease
+}
+
+.landing button:hover{
+    transform: scale(1.1);
+}
+
+  
